@@ -4,7 +4,7 @@
     <!-- ▼ 正しいAdSenseの審査用コード ▼ -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7778882177541864"
      crossorigin="anonymous"></script>
-    <meta name="description" content="ミスやトラブルの内容を選ぶだけで、ビジネス、上司、ギャル、王子様、反省してない風など、様々なテイストの謝罪文を自動作成する無料ツールです。">
+    <meta name="description" content="ミスやトラブルの内容を選ぶだけで、ビジネスからギャル・王子様・謝る気ゼロのネタ系まで作成できる無料のお詫び文自動作成ツールです。">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>一発お詫びメーカー</title>
@@ -29,7 +29,7 @@
             
             <div>
                 <p class="text-sm text-slate-600 mb-4">
-                    ミスやトラブルの内容を入力するだけで、まじめな謝罪から「絶対反省してないやろｗ」なネタ系まで、完璧な（？）謝罪文を自動で組み立てます。
+                    ミスやトラブルの内容を入力し、お好みの「謝罪レベル（テイスト）」を選ぶだけで、まじめな謝罪から「こいつ絶対謝る気ないやろｗ」なネタ系まで自動で組み立てます。
                 </p>
             </div>
 
@@ -41,46 +41,55 @@
                 <textarea id="mistake" rows="3" class="w-full rounded-xl border border-slate-300 p-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="例：納期に2日遅れてしまった、連絡を入れ忘れた、盛大にやらかした"></textarea>
             </div>
 
-            <!-- ② 相手との関係性・テイスト -->
+            <!-- ② 相手との関係性 -->
             <div>
                 <label class="block text-sm font-bold text-slate-700 mb-2" for="relation">
-                    2. 謝罪のテイスト・関係性
+                    2. 相手との関係性
                 </label>
                 <select id="relation" class="w-full rounded-xl border border-slate-300 p-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white">
-                    <optgroup label="まじめ・ビジネス系">
-                        <option value="client">厳しいクライアント・法人（ビジネス）</option>
-                        <option value="boss">直属の上司・先輩</option>
-                        <option value="customer">クレームを言ってきた顧客・一般ユーザー</option>
-                    </optgroup>
-                    <optgroup label="ユニーク・ネタ系（★NEW）">
-                        <option value="gal">✨ ギャルっぽく（まじでごめん〜！）</option>
-                        <option value="prince">👑 王子様っぽく（君の涙を汚してしまった…）</option>
-                        <option value="fake">🤪 こいつ反省してないやろｗ風</option>
-                        <option value="friend">友人・知人（カジュアル）</option>
-                    </optgroup>
+                    <option value="client">厳しいクライアント・法人（ビジネス）</option>
+                    <option value="boss">直属の上司・先輩</option>
+                    <option value="customer">クレームを言ってきた顧客・一般ユーザー</option>
+                    <option value="friend">友人・知人</option>
                 </select>
             </div>
 
-            <!-- ③ 謝罪レベル -->
+            <!-- ③ 謝罪レベル（ここでギャルや王子様、謝る気ゼロを選ぶ！） -->
             <div>
                 <label class="block text-sm font-bold text-slate-700 mb-2">
-                    3. 謝罪のレベル（誠意の度合い）
+                    3. 謝罪レベル（誠意・テイスト）
                 </label>
-                <div class="grid grid-cols-3 gap-3">
-                    <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
-                        <input type="radio" name="level" value="mild" class="sr-only">
-                        <span class="block text-sm font-bold text-slate-700">標準的</span>
-                        <span class="block text-xs text-slate-500 mt-1">丁寧かつ簡潔に</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <label class="border border-slate-200 rounded-xl p-3.5 cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
+                        <div class="flex items-center gap-2">
+                            <input type="radio" name="level" value="heavy" checked class="text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-sm font-bold text-slate-700">通常：深めの謝罪</span>
+                        </div>
+                        <span class="block text-xs text-slate-500 mt-1 pl-5">反省をしっかり伝える（まじめ）</span>
                     </label>
-                    <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
-                        <input type="radio" name="level" value="heavy" checked class="sr-only">
-                        <span class="block text-sm font-bold text-slate-700">深めの謝罪</span>
-                        <span class="block text-xs text-slate-500 mt-1">反省をしっかり伝える</span>
+
+                    <label class="border border-slate-200 rounded-xl p-3.5 cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
+                        <div class="flex items-center gap-2">
+                            <input type="radio" name="level" value="gal" class="text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-sm font-bold text-slate-700">✨ ギャルっぽく</span>
+                        </div>
+                        <span class="block text-xs text-slate-500 mt-1 pl-5">まじごめんちょ！ぴえん🥺</span>
                     </label>
-                    <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
-                        <input type="radio" name="level" value="max" class="sr-only">
-                        <span class="block text-sm font-bold text-slate-700">土下座レベル</span>
-                        <span class="block text-xs text-slate-500 mt-1">最大の誠意を見せる</span>
+
+                    <label class="border border-slate-200 rounded-xl p-3.5 cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
+                        <div class="flex items-center gap-2">
+                            <input type="radio" name="level" value="prince" class="text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-sm font-bold text-slate-700">👑 王子様風</span>
+                        </div>
+                        <span class="block text-xs text-slate-500 mt-1 pl-5">君の薔薇色の時間を汚して…</span>
+                    </label>
+
+                    <label class="border border-slate-200 rounded-xl p-3.5 cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-rose-600 has-[:checked]:bg-rose-50/50">
+                        <div class="flex items-center gap-2">
+                            <input type="radio" name="level" value="zero" class="text-rose-600 focus:ring-rose-500">
+                            <span class="text-sm font-bold text-rose-700">🤪 謝る気ゼロ（反省ゼロ）</span>
+                        </div>
+                        <span class="block text-xs text-rose-500 mt-1 pl-5">こいつ絶対反省してないやろｗ</span>
                     </label>
                 </div>
             </div>
@@ -112,7 +121,7 @@
                     💡 このツールが役に立った（または笑えた）ら、開発者を応援してね！
                 </p>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                    「もっとこういうふざけたテイストを追加して！」といったご要望は、開発者のX（Twitter）までお気軽にどうぞ！
+                    「もっとこういうふざけた謝罪レベルを追加して！」といったご要望は、開発者のX（Twitter）までお気軽にどうぞ！
                 </p>
                 <div>
                     <a href="https://x.com/1qcc5v" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs py-2.5 px-5 rounded-lg shadow transition">
@@ -144,49 +153,40 @@
             }
 
             let relationTitle = '';
-            let opening = '';
-            let closing = '';
+            let baseOpening = '';
+            let baseClosing = '';
 
+            // 関係性によるベース設定
             if (relation === 'client') {
                 relationTitle = '【お詫びメール / クライアント様向け】';
-                opening = '平素は格別のご高配を賜り、厚く御礼申し上げます。\nこの度は、弊社の不手際により多大なるご迷惑をおかけしましたこと、深くお詫び申し上げます。';
-                closing = '今後はこのような事態を二度と起こさぬよう、社内体制を強化し、再発防止に万全を期してまいります。\nこの度は誠に申し訳ございませんでした。';
+                baseOpening = '平素は格別のご高配を賜り、厚く御礼申し上げます。この度は弊社の不手際が発生しました。';
+                baseClosing = '今後はこのような事態を二度と起こさぬよう再発防止に努めます。';
             } else if (relation === 'boss') {
                 relationTitle = '【ご報告・お詫び / 上司・先輩向け】';
-                opening = 'お疲れ様です。〇〇です。\nこの度は、私の確認不足により多大なるご迷惑とご心配をおかけし、誠に申し訳ございません。';
-                closing = '今後は事前にしっかりと確認を徹底し、再発防止に努めます。\nこの度は大変申し訳ございませんでした。';
+                baseOpening = 'お疲れ様です。確認不足によりご迷惑をおかけしました。';
+                baseClosing = '今後は事前にしっかりと確認を徹底します。';
             } else if (relation === 'customer') {
                 relationTitle = '【お詫びのご連絡 / お客様向け】';
-                opening = 'いつも当店をご利用いただき、誠にありがとうございます。\nこの度は、せっかくのご期待を裏切る形となってしまいましたこと、心よりお詫び申し上げます。';
-                closing = '一刻も早く信頼を取り戻せるよう、誠心誠意対応させていただきます。\n重ねて、この度の不手際を深くお詫び申し上げます。';
-            } else if (relation === 'gal') {
-                relationTitle = '【超絶反省中（？）のギャルからのメッセージ】';
-                opening = 'まじでごめん！！！私のせいで超大事件になっててガチで草生えないんだけどぴえん🥺';
-                closing = '次は絶対やらかさないようにがんばるから、怒らないで〜！てへぺろ☆';
-            } else if (relation === 'prince') {
-                relationTitle = '【王宮からの悲痛なるお詫び（王子様風）】';
-                opening = '我が愚かな過ちによって、君の尊く美しい時間を奪ってしまったこと…この胸が痛んで仕方がないよ。';
-                closing = 'どうかその綺麗な瞳から涙をこぼさないでくれ。僕のすべてをかけて君を笑顔に戻してみせるからさ。';
-            } else if (relation === 'fake') {
-                relationTitle = '【反省してる“フリ”連絡網】';
-                opening = 'いやー、やっちまったもんはしょうがなくね？って心の中でちょっと思ってるんだけど、とりあえず謝っとくわｗ';
-                closing = 'まぁ、人生なんとかなるっしょ！次から気をつけるわ（多分）！お疲れ様でしたー！';
+                baseOpening = 'いつも当店をご利用いただき誠にありがとうございます。この度はご期待を裏切る形となってしまいました。';
+                baseClosing = '一刻も早く信頼を取り戻せるよう対応させていただきます。';
             } else {
                 relationTitle = '【お詫びメッセージ / 友人向け】';
-                opening = '本当にごめん！私のミスで大変な迷惑をかけちゃって、心から反省しています。';
-                closing = '今度お詫びをさせてほしい。本当にごめんなさい！';
+                baseOpening = '私のミスで大変な迷惑をかけちゃいました。';
+                baseClosing = '今度お詫びをさせてほしい！';
             }
 
-            let sincerity = '';
-            if (level === 'mild') {
-                sincerity = `発生した問題：${mistake}\n\n原因を早急に究明し、現在は正常な状態に戻るよう対応を進めております。`;
-            } else if (level === 'heavy') {
-                sincerity = `発生した問題：${mistake}\n\n私の不注意が招いた結果であり、弁解の余地もございません。ご迷惑をおかけしたことを重く受け止めております。`;
-            } else {
-                sincerity = `発生した問題：${mistake}\n\n事の重大さを深く受け止め、現在すべてのスケジュールを調整して最優先でリカバリー作業を行っております。本当に申し訳ございません。`;
-            }
+            let finalOutput = '';
 
-            const finalOutput = `${relationTitle}\n\n件名：【お詫び】${mistake}に関するお詫びとご報告\n\n${opening}\n\n${sincerity}\n\n${closing}`;
+            // 謝罪レベル（テイスト）による分岐
+            if (level === 'heavy') {
+                finalOutput = `${relationTitle}\n\n件名：【お詫び】${mistake}に関するお詫びとご報告\n\n${baseOpening}\n\n発生した問題：${mistake}\n\n私の不注意が招いた結果であり、深く反省しております。ご迷惑をおかけし誠に申し訳ございませんでした。\n\n${baseClosing}`;
+            } else if (level === 'gal') {
+                finalOutput = `✨【超絶反省中（？）のギャル風お詫び】✨\n\n件名：【ガチでぴえん】${mistake}をやらかした件について\n\nまじでごめん！！！${baseOpening}\n\nやらかした内容：${mistake}\n\nうちのせいで超大事件になっててガチで草生えないんだけどぴえん🥺 次は絶対がんばるから許してちょ！\n\n${baseClosing}（てへぺろ☆）`;
+            } else if (level === 'prince') {
+                finalOutput = `👑【王宮からの悲痛なるお詫び（王子様風）】👑\n\n件名：【許し給え】${mistake}という過ちについて\n\n我が愚かな手によって、${baseOpening}\n\n今回の悲劇：${mistake}\n\n君の薔薇色の時間を汚してしまったこと…この胸が痛んで仕方がないよ。どうかその綺麗な瞳から涙をこぼさないでくれ。僕のすべてをかけて償うよ。\n\n${baseClosing}`;
+            } else if (level === 'zero') {
+                finalOutput = `🤪【謝る気ゼロ（絶対に反省してない風）】🤪\n\n件名：【朗報？】${mistake}しちゃったみたいだけどさ\n\nいやー、${baseOpening}\n\n起きたこと：${mistake}\n\nまぁ、やっちまったもんはしょうがなくね？人生なんとかなるっしょ！一応「反省してる風」の文面出しとくわｗ ドンマイ！\n\n${baseClosing}（反省してないアピール）`;
+            }
 
             document.getElementById('outputText').textContent = finalOutput;
             document.getElementById('resultArea').classList.remove('hidden');
