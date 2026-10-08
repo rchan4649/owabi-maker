@@ -1,1 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ▼ Google AdSense (Optional) ▼ -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7778882177541864"
+     crossorigin="anonymous"></script>
+    <meta name="description" content="Generate hilarious, professional, or completely unapologetic excuses and apologies in one click!">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Excuse & Apology Generator</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between">
 
+    <!-- Header -->
+    <header class="bg-white shadow-sm py-4 px-6 mb-6">
+        <div class="max-w-2xl mx-auto flex items-center justify-between">
+            <h1 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                🙇‍♂️ Excuse & Apology Generator
+            </h1>
+            <a href="index.html" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-3 py-1.5 rounded-lg transition">
+                🇯🇵 日本語版へ
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-2xl mx-auto w-full px-4 mb-12">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 space-y-6">
+            
+            <div>
+                <p class="text-sm text-slate-600 mb-4">
+                    Type in your screw-up, pick a vibe, and let AI-style logic generate the ultimate professional apology or a completely shameless excuse.
+                </p>
+            </div>
+
+            <!-- ① Target Name / Recipient -->
+            <div>
+                <label class="block text-sm font-bold text-slate-700 mb-2" for="targetName">
+                    1. Who is this for? (e.g., Boss, Bestie, Client)
+                </label>
+                <input type="text" id="targetName" class="w-full rounded-xl border border-slate-300 p-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="e.g., Mr. Smith, My Boss, Bestie">
+            </div>
+
+            <!-- ② The Mistake -->
+            <div>
+                <label class="block text-sm font-bold text-slate-700 mb-2" for="mistake">
+                    2. What did you mess up? (Bullet points are fine)
+                </label>
+                <textarea id="mistake" rows="3" class="w-full rounded-xl border border-slate-300 p-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="e.g., missed the deadline by 2 days, forgot to reply, totally ghosted the project"></textarea>
+            </div>
+
+            <!-- ③ Relationship -->
+            <div>
+                <label class="block text-sm font-bold text-slate-700 mb-2" for="relation">
+                    3. Relationship
+                </label>
+                <select id="relation" class="w-full rounded-xl border border-slate-300 p-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white">
+                    <option value="client">Strict Client / Corporate</option>
+                    <option value="boss">Boss / Manager</option>
+                    <option value="customer">Customer / User</option>
+                    <option value="friend">Friend / Peer</option>
+                </select>
+            </div>
+
+            <!-- ④ Apology Level / Vibe -->
+            <div>
+                <label class="block text-sm font-bold text-slate-700 mb-2">
+                    4. Apology Vibe (Sincerity Level)
+                </label>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <label class="border border-slate-200 rounded-xl p-3.5 cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
+                        <div class="flex items-center gap-2">
+                            <input type="radio" name="level" value="heavy" checked class="text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-sm font-bold text-slate-700">Serious Apology</span>
+                        </div>
+                        <span class="block text-xs text-slate-500 mt-1 pl-5">Deep regret & professional</span>
+                    </label>
+
+                    <label class="border border-slate-200 rounded-xl p-3.5 cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
+                        <div class="flex items-center gap-2">
+                            <input type="radio" name="level" value="genz" class="text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-sm font-bold text-slate-700">✨ Gen Z / TikToker</span>
+                        </div>
+                        <span class="block text-xs text-slate-500 mt-1 pl-5">My bad bestie, I'm crying 💀</span>
+                    </label>
+
+                    <label class="border border-slate-200 rounded-xl p-3.5 cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
+                        <div class="flex items-center gap-2">
+                            <input type="radio" name="level" value="shakespeare" class="text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-sm font-bold text-slate-700">👑 Shakespearean</span>
+                        </div>
+                        <span class="block text-xs text-slate-500 mt-1 pl-5">Forgive me, for I have sinned...</span>
+                    </label>
+
+                    <label class="border border-slate-200 rounded-xl p-3.5 cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-rose-600 has-[:checked]:bg-rose-50/50">
+                        <div class="flex items-center gap-2">
+                            <input type="radio" name="level" value="zero" class="text-rose-600 focus:ring-rose-500">
+                            <span class="text-sm font-bold text-rose-700">🤪 Zero Remorse</span>
+                        </div>
+                        <span class="block text-xs text-rose-500 mt-1 pl-5">Oops. Anyway, life goes on lol</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- ⑤ Length / Volume -->
+            <div>
+                <label class="block text-sm font-bold text-slate-700 mb-2">
+                    5. Length & Volume
+                </label>
+                <div class="grid grid-cols-3 gap-3">
+                    <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
+                        <input type="radio" name="length" value="short" class="sr-only">
+                        <span class="block text-sm font-bold text-slate-700">Short</span>
+                        <span class="block text-xs text-slate-500 mt-1">3-4 lines</span>
+                    </label>
+                    <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
+                        <input type="radio" name="length" value="normal" checked class="sr-only">
+                        <span class="block text-sm font-bold text-slate-700">Standard</span>
+                        <span class="block text-xs text-slate-500 mt-1">5-8 lines</span>
+                    </label>
+                    <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
+                        <input type="radio" name="length" value="long" class="sr-only">
+                        <span class="block text-sm font-bold text-slate-700">Long Essay</span>
+                        <span class="block text-xs text-slate-500 mt-1">Maximum excuses</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Generate Button -->
+            <button onclick="generateApology()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 px-4 rounded-xl shadow-md transition duration-200 flex items-center justify-center gap-2">
+                ✨ Generate Apology
+            </button>
+        </div>
+
+        <!-- Result Area -->
+        <div id="resultArea" class="hidden mt-6 bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 space-y-6">
+            <div class="flex items-center justify-between">
+                <h2 class="font-bold text-slate-900 flex items-center gap-2">
+                    📋 Generated Output
+                </h2>
+                <button onclick="copyText()" id="copyBtn" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-3 py-1.5 rounded-lg transition">
+                    Copy Text
+                </button>
+            </div>
+            
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                <pre id="outputText" class="whitespace-pre-wrap text-sm text-slate-700 font-sans"></pre>
+            </div>
+
+            <!-- Support Box -->
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-indigo-100 rounded-xl p-5 text-center space-y-3">
+                <p class="text-sm font-bold text-slate-800">
+                    💡 Did this save your life (or make you laugh)?
+                </p>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Feel free to share or drop feedback to the developer on X!
+                </p>
+                <div>
+                    <a href="https://x.com/1qcc5v" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs py-2.5 px-5 rounded-lg shadow transition">
+                        🕥 Follow Developer (@1qcc5v) on X
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-12 py-8 px-6 text-center text-xs text-slate-500 space-y-3">
+        <p>
+            🛠️ Contact / Feedback: <a href="https://x.com/1qcc5v" target="_blank" rel="noopener noreferrer" class="text-indigo-600 font-bold hover:underline">X (@1qcc5v)</a>
+        </p>
+        <p>&copy; 2026 Excuse & Apology Generator All Rights Reserved.</p>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        function generateApology() {
+            const targetName = document.getElementById('targetName').value.trim() || 'Dear Team';
+            const mistake = document.getElementById('mistake').value.trim();
+            const relation = document.getElementById('relation').value;
+            const level = document.querySelector('input[name="level"]:checked').value;
+            const length = document.querySelector('input[name="length"]:checked').value;
+
+            if (!mistake) {
+                alert('Please enter what you messed up!');
+                return;
+            }
+
+            let relationTitle = `Subject: Regarding ${mistake}`;
+            if (relation === 'client') {
+                relationTitle = `Subject: [Urgent Apology] Regarding ${mistake}`;
+            } else if (relation === 'boss') {
+                relationTitle = `Subject: Update / Apology regarding ${mistake}`;
+            } else {
+                relationTitle = `Subject: So about ${mistake}...`;
+            }
+
+            let bodyContent = '';
+
+            // Logic for English Vibes & Lengths
+            if (level === 'heavy') {
+                if (length === 'short') {
+                    bodyContent = `Hi ${targetName},\n\nI sincerely apologize for ${mistake}. I will ensure this never happens again.`;
+                } else if (length === 'normal') {
+                    bodyContent = `Dear ${targetName},\n\nI hope this message finds you well.\n\nI am writing to sincerely apologize for my oversight regarding "${mistake}". I take full responsibility for this issue and am currently taking steps to resolve it as quickly as possible.\n\nThank you for your patience and understanding.`;
+                } else {
+                    bodyContent = `Dear ${targetName},\n\nI am writing this to express my deepest and most sincere apologies regarding the recent failure concerning "${mistake}". \n\nMy lack of attention and poor execution have caused unnecessary trouble, and I am deeply ashamed of my oversight. There is no excuse for this happening. Right now, I am dropping everything else to fix this issue and prevent any future recurrence.\n\nThank you for your continued trust despite my shortcomings.`;
+                }
+            } else if (level === 'genz') {
+                if (length === 'short') {
+                    bodyContent = `Hey ${targetName} 💀\n\nMy bad for ${mistake}. I literally blacked out, forgive me pls 🥺`;
+                } else if (length === 'normal') {
+                    bodyContent = `Hey ${targetName},\n\nSo... about ${mistake}. Not my finest moment ngl 💀\n\nI am literally crying and throwing up over how bad I messed up. Please don't cancel me, I'll do better next time fr fr.`;
+                } else {
+                    bodyContent = `Hey ${targetName} bestie,\n\nI am writing this while in absolute shambles because of ${mistake}. My brain just stopped working for a sec and it's giving major disaster energy.\n\nEveryone is yelling at me and honestly? Fair. But if you could pretend I'm learning a valuable lesson right now that would be elite. Pls forgive me, I'm begging bestie 😭✨`;
+                }
+            } else if (level === 'shakespeare') {
+                if (length === 'short') {
+                    bodyContent = `Dearest ${targetName},\n\nForgive me, for my clumsy hands have brought about "${mistake}". I throw myself upon your mercy.`;
+                } else if (length === 'normal') {
+                    bodyContent = `Noble ${targetName},\n\nBy my troth, I am undone. My careless folly has birthed the tragedy of "${mistake}", staining these golden hours with sorrow.\n\nI pray thee, let not anger cloud thine eyes, for my heart doth bleed for mine own incompetence.`;
+                } else {
+                    bodyContent = `Hear me, O esteemed ${targetName},\n\nNight whispers of my profound failure regarding "${mistake}". The very stars weep at my sheer foolishness. \n\nIf I could turn back the hourglass of time, I would undo this wretched blunder. Alas, I can only offer my broken soul and eternal devotion as restitution. Prithee, grant unto me thy forgiveness, lest I perish in despair. 📜🥀`;
+                }
+            } else if (level === 'zero') {
+                if (length === 'short') {
+                    bodyContent = `Hey ${targetName},\n\nYeah, so "${mistake}" happened. Anyway, whatever lol.`;
+                } else if (length === 'normal') {
+                    bodyContent = `Hey ${targetName},\n\nLook, "${mistake}" happened, but honestly? It is what it is. Life goes on.\n\nI'm typing out this 'apology' because people are making a big deal out of nothing, but we all know nobody's perfect. Cheers!`;
+                } else {
+                    bodyContent = `To ${targetName},\n\nFrankly speaking, when I heard about "${mistake}", my first thought was "Wait, is this actually my fault tho?" But corporate rules dictate I must pretend to care.\n\nSo here is a very long, very emotional text that looks like deep remorse so everyone gets off my back. Hope you enjoy reading fiction as much as I enjoyed not caring! Have a great day 😎✌️`;
+                }
+            }
+
+            const finalOutput = `${relationTitle}\n\n${bodyContent}`;
+
+            document.getElementById('outputText').textContent = finalOutput;
+            document.getElementById('resultArea').classList.remove('hidden');
+            document.getElementById('resultArea').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function copyText() {
+            const text = document.getElementById('outputText').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.getElementById('copyBtn');
+                btn.textContent = 'Copied!';
+                btn.classList.add('bg-emerald-500', 'text-white');
+                setTimeout(() => {
+                    btn.textContent = 'Copy Text';
+                    btn.classList.remove('bg-emerald-500', 'text-white');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
