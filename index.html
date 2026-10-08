@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- ▼ 正しいAdSenseの審査用コード ▼ -->
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7778882177541864"
+     crossorigin="anonymous"></script>
+    <meta name="description" content="ミスやトラブルの内容を選ぶだけで、ビジネス、上司、顧客、友人向けの完璧な謝罪文・お詫びメールを自動作成する無料ツールです。">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一発お詫びメーカー</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between">
+
+    <!-- ヘッダー -->
+    <header class="bg-white shadow-sm py-4 px-6 mb-6">
+        <div class="max-w-2xl mx-auto flex items-center justify-between">
+            <h1 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                🙇‍♂️ 一発お詫びメーカー
+            </h1>
+            <span class="text-xs bg-rose-100 text-rose-600 font-semibold px-2.5 py-1 rounded-full">SaaS Prototyping</span>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="max-w-2xl mx-auto w-full px-4 mb-12">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 space-y-6">
+            
+            <div>
+                <p class="text-sm text-slate-600 mb-4">
+                    ミスやトラブルの内容を入力するだけで、相手を怒らせない完璧な謝罪文を自動で組み立てます。
+                </p>
+            </div>
+
+            <!-- ① ミスの内容 -->
+            <div>
+                <label class="block text-sm font-bold text-slate-700 mb-2" for="mistake">
+                    1. ミスの内容（箇条書きでOK）
+                </label>
+                <textarea id="mistake" rows="3" class="w-full rounded-xl border border-slate-300 p-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="例：納期に2日遅れてしまった、連絡を入れ忘れた、発注数を間違えた"></textarea>
+            </div>
+
+            <!-- ② 相手との関係性 -->
+            <div>
+                <label class="block text-sm font-bold text-slate-700 mb-2" for="relation">
+                    2. 相手との関係性
+                </label>
+                <select id="relation" class="w-full rounded-xl border border-slate-300 p-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white">
+                    <option value="client">厳しいクライアント・法人（ビジネス）</option>
+                    <option value="boss">直属の上司・先輩</option>
+                    <option value="customer">クレームを言ってきた顧客・一般ユーザー</option>
+                    <option value="friend">友人・知人</option>
+                </select>
+            </div>
+
+            <!-- ③ 謝罪レベル -->
+            <div>
+                <label class="block text-sm font-bold text-slate-700 mb-2">
+                    3. 謝罪のレベル（誠意の度合い）
+                </label>
+                <div class="grid grid-cols-3 gap-3">
+                    <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
+                        <input type="radio" name="level" value="mild" class="sr-only">
+                        <span class="block text-sm font-bold text-slate-700">標準的</span>
+                        <span class="block text-xs text-slate-500 mt-1">丁寧かつ簡潔に</span>
+                    </label>
+                    <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
+                        <input type="radio" name="level" value="heavy" checked class="sr-only">
+                        <span class="block text-sm font-bold text-slate-700">深めの謝罪</span>
+                        <span class="block text-xs text-slate-500 mt-1">反省をしっかり伝える</span>
+                    </label>
+                    <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
+                        <input type="radio" name="level" value="max" class="sr-only">
+                        <span class="block text-sm font-bold text-slate-700">土下座レベル</span>
+                        <span class="block text-xs text-slate-500 mt-1">最大の誠意を見せる</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 生成ボタン -->
+            <button onclick="generateApology()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 px-4 rounded-xl shadow-md transition duration-200 flex items-center justify-center gap-2">
+                ✨ 完璧な謝罪文を生成する
+            </button>
+        </div>
+
+        <!-- 結果表示エリア -->
+        <div id="resultArea" class="hidden mt-6 bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 space-y-4">
+            <div class="flex items-center justify-between">
+                <h2 class="font-bold text-slate-900 flex items-center gap-2">
+                    📋 生成された謝罪文
+                </h2>
+                <button onclick="copyText()" id="copyBtn" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-3 py-1.5 rounded-lg transition">
+                    コピーする
+                </button>
+            </div>
+            
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                <pre id="outputText" class="whitespace-pre-wrap text-sm text-slate-700 font-sans"></pre>
+            </div>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="text-center py-6 text-xs text-slate-400">
+        &copy; 2026 一発お詫びメーカー All Rights Reserved.
+    </footer>
+
+    <!-- スクリプト（ロジック部分） -->
+    <script>
+        function generateApology() {
+            const mistake = document.getElementById('mistake').value.trim();
+            const relation = document.getElementById('relation').value;
+            const level = document.querySelector('input[name="level"]:checked').value;
+
+            if (!mistake) {
+                alert('ミスの内容を入力してください！');
+                return;
+            }
+
+            let relationTitle = '';
+            let opening = '';
+            let closing = '';
+
+            if (relation === 'client') {
+                relationTitle = '【お詫びメール / クライアント様向け】';
+                opening = '平素は格別のご高配を賜り、厚く御礼申し上げます。\nこの度は、弊社の不手際により多大なるご迷惑をおかけしましたこと、深くお詫び申し上げます。';
+                closing = '今後はこのような事態を二度と起こさぬよう、社内体制を強化し、再発防止に万全を期してまいります。\nこの度は誠に申し訳ございませんでした。';
+            } else if (relation === 'boss') {
+                relationTitle = '【ご報告・お詫び / 上司・先輩向け】';
+                opening = 'お疲れ様です。〇〇です。\nこの度は、私の確認不足により多大なるご迷惑とご心配をおかけし、誠に申し訳ございません。';
+                closing = '今後は事前にしっかりと確認を徹底し、再発防止に努めます。\nこの度は大変申し訳ございませんでした。';
+            } else if (relation === 'customer') {
+                relationTitle = '【お詫びのご連絡 / お客様向け】';
+                opening = 'いつも当店をご利用いただき、誠にありがとうございます。\nこの度は、せっかくのご期待を裏切る形となってしまいましたこと、心よりお詫び申し上げます。';
+                closing = '一刻も早く信頼を取り戻せるよう、誠心誠意対応させていただきます。\n重ねて、この度の不手際を深くお詫び申し上げます。';
+            } else {
+                relationTitle = '【お詫びメッセージ / 友人向け】';
+                opening = '本当にごめん！私のミスで大変な迷惑をかけちゃって、心から反省しています。';
+                closing = '今度お詫びをさせてほしい。本当にごめんなさい！';
+            }
+
+            let sincerity = '';
+            if (level === 'mild') {
+                sincerity = `発生した問題：${mistake}\n\n原因を早急に究明し、現在は正常な状態に戻るよう対応を進めております。`;
+            } else if (level === 'heavy') {
+                sincerity = `発生した問題：${mistake}\n\n私の不注意が招いた結果であり、弁解の余地もございません。ご迷惑をおかけしたことを重く受け止めております。`;
+            } else {
+                sincerity = `発生した問題：${mistake}\n\n事の重大さを深く受け止め、現在すべてのスケジュールを調整して最優先でリカバリー作業を行っております。本当に申し訳ございません。`;
+            }
+
+            const finalOutput = `${relationTitle}\n\n件名：【お詫び】${mistake}に関するお詫びとご報告\n\n${opening}\n\n${sincerity}\n\n${closing}`;
+
+            document.getElementById('outputText').textContent = finalOutput;
+            document.getElementById('resultArea').classList.remove('hidden');
+            document.getElementById('resultArea').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function copyText() {
+            const text = document.getElementById('outputText').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.getElementById('copyBtn');
+                btn.textContent = 'コピーしました！';
+                btn.classList.add('bg-emerald-500', 'text-white');
+                setTimeout(() => {
+                    btn.textContent = 'コピーする';
+                    btn.classList.remove('bg-emerald-500', 'text-white');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
