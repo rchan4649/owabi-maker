@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <!-- ▼ 正しいAdSenseの審査用コード ▼ -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7778882177541864"
-     crossorigin="anonymous"></script>
-    <meta name="description" content="相手の名前や行数・長さを自由自在にカスタマイズできる、ユニークな一発お詫びメーカーです。">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7778882177541864" crossorigin="anonymous"></script>
+    <meta name="description" content="相手の名前や行数・長さを自由自在にカスタマイズ、多彩なネタ系分岐が楽しめる一発お詫びメーカーです。">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>一発お詫びメーカー</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between">
@@ -19,7 +16,9 @@
             <h1 class="text-xl font-bold text-slate-900 flex items-center gap-2">
                 🙇‍♂️ 一発お詫びメーカー
             </h1>
-            <span class="text-xs bg-rose-100 text-rose-600 font-semibold px-2.5 py-1 rounded-full">SaaS Prototyping</span>
+            <a href="en.html" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-3 py-1.5 rounded-lg transition">
+                🇬🇧 English Version
+            </a>
         </div>
     </header>
 
@@ -29,14 +28,14 @@
             
             <div>
                 <p class="text-sm text-slate-600 mb-4">
-                    相手の名前や文の長さ（行数）を細かく指定して、状況にぴったりの謝罪文（＆ネタ系）を自動生成できます。
+                    選んだキャラクターのテイストのまま、<strong>5パターンの豊富な言い回し（レパートリー）</strong>からランダムに生成されます！何度でも押して楽しめます。
                 </p>
             </div>
 
             <!-- ① 相手の名前 -->
             <div>
                 <label class="block text-sm font-bold text-slate-700 mb-2" for="targetName">
-                    1. 相手の名前・肩書（例：鈴木部長、〇〇様、佐藤くん）
+                    1. 相手の名前・肩書（例：鈴木部長、〇〇様、推しメン）
                 </label>
                 <input type="text" id="targetName" class="w-full rounded-xl border border-slate-300 p-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="例：山田クライアント様、同期の田中">
             </div>
@@ -62,42 +61,42 @@
                 </select>
             </div>
 
-            <!-- ④ 謝罪レベル（テイスト） -->
+            <!-- ④ 謝罪レベル（各キャラ5レパートリー） -->
             <div>
                 <label class="block text-sm font-bold text-slate-700 mb-2">
-                    4. 謝罪レベル（誠意・テイスト）
+                    4. 謝罪のキャラクター（各5バリエーション）
                 </label>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <label class="border border-slate-200 rounded-xl p-3.5 cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
                         <div class="flex items-center gap-2">
                             <input type="radio" name="level" value="heavy" checked class="text-indigo-600 focus:ring-indigo-500">
-                            <span class="text-sm font-bold text-slate-700">通常：深めの謝罪</span>
+                            <span class="text-sm font-bold text-slate-700">通常：真面目な謝罪（5レパ）</span>
                         </div>
-                        <span class="block text-xs text-slate-500 mt-1 pl-5">反省をしっかり伝える（まじめ）</span>
+                        <span class="block text-xs text-slate-500 mt-1 pl-5">丁寧・誠実なビジネス謝罪文</span>
                     </label>
 
                     <label class="border border-slate-200 rounded-xl p-3.5 cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
                         <div class="flex items-center gap-2">
                             <input type="radio" name="level" value="gal" class="text-indigo-600 focus:ring-indigo-500">
-                            <span class="text-sm font-bold text-slate-700">✨ ギャルっぽく</span>
+                            <span class="text-sm font-bold text-slate-700">✨ ギャル風（5レパ）</span>
                         </div>
-                        <span class="block text-xs text-slate-500 mt-1 pl-5">まじごめんちょ！ぴえん🥺</span>
+                        <span class="block text-xs text-slate-500 mt-1 pl-5">ぴえん・タメ口・ノリ系ギャル</span>
                     </label>
 
                     <label class="border border-slate-200 rounded-xl p-3.5 cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
                         <div class="flex items-center gap-2">
                             <input type="radio" name="level" value="prince" class="text-indigo-600 focus:ring-indigo-500">
-                            <span class="text-sm font-bold text-slate-700">👑 王子様風</span>
+                            <span class="text-sm font-bold text-slate-700">👑 王子様風（5レパ）</span>
                         </div>
-                        <span class="block text-xs text-slate-500 mt-1 pl-5">君の薔薇色の時間を汚して…</span>
+                        <span class="block text-xs text-slate-500 mt-1 pl-5">甘くドラマチックな王子様ボイス</span>
                     </label>
 
                     <label class="border border-slate-200 rounded-xl p-3.5 cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-rose-600 has-[:checked]:bg-rose-50/50">
                         <div class="flex items-center gap-2">
                             <input type="radio" name="level" value="zero" class="text-rose-600 focus:ring-rose-500">
-                            <span class="text-sm font-bold text-rose-700">🤪 謝る気ゼロ（反省ゼロ）</span>
+                            <span class="text-sm font-bold text-rose-700">🤪 謝る気ゼロ（5レパ）</span>
                         </div>
-                        <span class="block text-xs text-rose-500 mt-1 pl-5">こいつ絶対反省してないやろｗ</span>
+                        <span class="block text-xs text-rose-500 mt-1 pl-5">開き直り・無敵の適当モード</span>
                     </label>
                 </div>
             </div>
@@ -111,24 +110,24 @@
                     <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
                         <input type="radio" name="length" value="short" class="sr-only">
                         <span class="block text-sm font-bold text-slate-700">サクッと短め</span>
-                        <span class="block text-xs text-slate-500 mt-1">3〜4行で簡潔に</span>
+                        <span class="block text-xs text-slate-500 mt-1">3〜4行</span>
                     </label>
                     <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
                         <input type="radio" name="length" value="normal" checked class="sr-only">
                         <span class="block text-sm font-bold text-slate-700">標準</span>
-                        <span class="block text-xs text-slate-500 mt-1">5〜8行の王道</span>
+                        <span class="block text-xs text-slate-500 mt-1">5〜8行</span>
                     </label>
                     <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
                         <input type="radio" name="length" value="long" class="sr-only">
-                        <span class="block text-sm font-bold text-slate-700">長文（熱意マシマシ）</span>
-                        <span class="block text-xs text-slate-500 mt-1">10行以上の全力言い訳</span>
+                        <span class="block text-sm font-bold text-slate-700">長文（熱意マシ）</span>
+                        <span class="block text-xs text-slate-500 mt-1">10行以上</span>
                     </label>
                 </div>
             </div>
 
             <!-- 生成ボタン -->
             <button onclick="generateApology()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 px-4 rounded-xl shadow-md transition duration-200 flex items-center justify-center gap-2">
-                ✨ 完璧な謝罪文を生成する
+                ✨ レパートリーからランダム生成する
             </button>
         </div>
 
@@ -147,32 +146,25 @@
                 <pre id="outputText" class="whitespace-pre-wrap text-sm text-slate-700 font-sans"></pre>
             </div>
 
-            <!-- X（Twitter）への応援・リクエスト誘導ボックス -->
+            <!-- Xへの応援ボックス -->
             <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-indigo-100 rounded-xl p-5 text-center space-y-3">
                 <p class="text-sm font-bold text-slate-800">
-                    💡 このツールが役に立った（または笑えた）ら、開発者を応援してね！
-                </p>
-                <p class="text-xs text-slate-600 leading-relaxed">
-                    「こんなカスタマイズ機能も追加して！」といったご要望は、開発者のX（Twitter）までお気軽にどうぞ！
+                    💡 面白い文章が出たらXでシェアしてね！
                 </p>
                 <div>
                     <a href="https://x.com/1qcc5v" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs py-2.5 px-5 rounded-lg shadow transition">
-                        🕥 開発者（@1qcc5v）のXを見る・フォローする
+                        🕥 開発者（@1qcc5v）のXを見る
                     </a>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- フッター -->
     <footer class="bg-white border-t border-slate-200 mt-12 py-8 px-6 text-center text-xs text-slate-500 space-y-3">
-        <p>
-            🛠️ 不具合の報告・ご意見・制作のご依頼は、開発者の<a href="https://x.com/1qcc5v" target="_blank" rel="noopener noreferrer" class="text-indigo-600 font-bold hover:underline">X（@1qcc5v）のDM</a>までお気軽にどうぞ！
-        </p>
+        <p>🛠️ ご意見・不具合は<a href="https://x.com/1qcc5v" target="_blank" rel="noopener noreferrer" class="text-indigo-600 font-bold hover:underline">X（@1qcc5v）のDM</a>まで！</p>
         <p>&copy; 2026 一発お詫びメーカー All Rights Reserved.</p>
     </footer>
 
-    <!-- スクリプト（ロジック部分） -->
     <script>
         function generateApology() {
             const targetName = document.getElementById('targetName').value.trim() || 'ご担当者様';
@@ -186,58 +178,79 @@
                 return;
             }
 
-            // 基本的な宛先・タイトルの設定
-            let relationTitle = '';
-            if (relation === 'client') {
-                relationTitle = `【お詫びメール】${targetName}`;
-            } else if (relation === 'boss') {
-                relationTitle = `【ご報告・お詫び】${targetName}`;
-            } else if (relation === 'customer') {
-                relationTitle = `【お詫びのご連絡】${targetName}`;
-            } else {
-                relationTitle = `【お詫び】${targetName}へ`;
-            }
+            let relationTitle = `【お詫び】${targetName}へ`;
+            if (relation === 'client') relationTitle = `【お詫びメール】${targetName}`;
+            else if (relation === 'boss') relationTitle = `【ご報告・お詫び】${targetName}`;
+            else if (relation === 'customer') relationTitle = `【お詫びのご連絡】${targetName}`;
 
+            const r = Math.floor(Math.random() * 5); // 0〜4の5レパートリー
             let bodyContent = '';
 
-            // 謝罪レベル（テイスト）× 長さ（行数ボリューム）による分岐
             if (level === 'heavy') {
-                if (length === 'short') {
-                    bodyContent = `${targetName}\n\nこの度は「${mistake}」というミスを起こしてしまい、誠に申し訳ございませんでした。\n今後は再発防止に努めてまいります。`;
-                } else if (length === 'normal') {
-                    bodyContent = `${targetName}\n\n平素は大変お世話になっております。\nこの度は、私どもの不手際により「${mistake}」という事態を招いてしまい、深くお詫び申し上げます。\n\n本件の重大さを真摯に受け止め、早急にリカバリー対応を進めております。\n今後は二度とこのようなことがないよう、管理体制を徹底してまいります。この度は誠に申し訳ございませんでした。`;
-                } else {
-                    bodyContent = `${targetName}\n\n毎度格別のお引き立てを賜り、厚く御礼申し上げます。\n\nこの度、私の極めて浅はかな確認不足と管理体制の甘さが原因で、「${mistake}」という大変重大なご迷惑をおかけしてしまいました。\n\n弁解の余地は一切ございません。ご迷惑とご心配をおかけした皆様の信頼を裏切ってしまったこと、心より深く反省しております。\n\n現在、すべてのスケジュールを投げ打って最優先で修正・対策にあたっております。今後は二度とこのような不手際を起こさぬよう、全力を尽くしてまいります。重ねて、深くお詫び申し上げます。`;
-                }
+                const templates = [
+                    // レパ1：王道ビジネス
+                    `平素は大変お世話になっております。\n\nこの度は、私どもの不手際により「${mistake}」という事態を招いてしまい、深くお詫び申し上げます。本件の重大さを真摯に受け止め、早急にリカバリー対応を進めてまいります。`,
+                    // レパ2：直球猛省
+                    `拝啓 ${targetName}\n\n私の確認不足が原因で「${mistake}」を引き起こしてしまいました。多大なるご迷惑をおかけしましたことを、心より深くお詫び申し上げます。`,
+                    // レパ3：平身低頭
+                    `お疲れ様です。\n\n「${mistake}」の件、本当に申し訳ございませんでした。私の配慮が足りておらず、弁解の余地もございません。ただいま全力で挽回に努めております。`,
+                    // レパ4：再発防止重視
+                    `謹啓 ${targetName}\n\nこのたびは「${mistake}」が発生いたしました件につきまして、重ねて深くお詫び申し上げます。早急に原因究明と再発防止策を講じてまいります。`,
+                    // レパ5：誠心誠意
+                    `${targetName}\n\nこの度は「${mistake}」というご迷惑をおかけし、誠に申し訳ございませんでした。皆様の信頼を損ねたことを重く受け止め、誠心誠意償ってまいります。`
+                ];
+                bodyContent = templates[r];
             } else if (level === 'gal') {
-                if (length === 'short') {
-                    bodyContent = `${targetName}〜！\n\n「${mistake}」やらかしちゃってマジでごめん！次からガチで気をつけるから許してぴえん🥺`;
-                } else if (length === 'normal') {
-                    bodyContent = `${targetName}\n\nまじでごめん！！！\n私のせいで「${mistake}」っていう超大事件になっててガチで草生えないんだけどぴえん🥺\n\n反省はしてるつもりだから、これに懲りて見捨てないでほしいな！次からがんばるから許してね、てへぺろ☆`;
-                } else {
-                    bodyContent = `${targetName}〜！お疲れ様です！\n\nいやー、まじでやばい。「${mistake}」をやらかしちゃって、自分の脳みそバグってるんじゃないかってレベルで反省してる（？）ぴえん🥺\n\n周りからもめっちゃ怒られたし、さすがに反省のポーズだけでも見せないとやばい雰囲気がすごいので、この長文メッセージで許してほしいな！\n\n次から本気出す（多分）から、どうか見捨てないでね！おねがい！`;
-                }
+                const templates = [
+                    // レパ1：ぴえん系
+                    `${targetName}〜！\n\n「${mistake}」やらかしちゃってマジでごめん！うちの脳みそバグってて草生えないんだけどぴえん🥺 次からガチで気をつける！`,
+                    // レパ2：焦り系
+                    `ねえ聞いて${targetName}。\n\n「${mistake}」やっちゃって、まじでやばい焦ってる💦 周りからも鬼詰めされてガチ泣き寸前だから許してちょ！`,
+                    // レパ3：反省風ノリ
+                    `${targetName}お疲れ！\n\n「${mistake}」の件、ぶっちゃけやっちゃった感すごいわー。一応めっちゃ反省してるフリしとくから許してね🫶`,
+                    // レパ4：JK用語強め
+                    `まじでやばいミスしたわ ${targetName}\n\n「${mistake}」とかガチでアホすぎん？愛想笑いでいいから許してほしいぴえん通り越してぱおん🥺`,
+                    // レパ5：あっさりギャル
+                    `${targetName}〜、なんか「${mistake}」でめちゃ怒られたんだけど！w\nまあウチのせいだししゃーない。次からがんばるから許してね！`
+                ];
+                bodyContent = templates[r];
             } else if (level === 'prince') {
-                if (length === 'short') {
-                    bodyContent = `最愛の${targetName}へ。\n\n僕の過ちにより「${mistake}」を起こし、君の時間を奪ってしまった。許し給え。`;
-                } else if (length === 'normal') {
-                    bodyContent = `気高き${targetName}へ。\n\n我が愚かな手によって「${mistake}」という不手際を招き、君の薔薇色の時間を汚してしまったね…この胸が痛んで仕方がないよ。\n\nどうかその綺麗な瞳から涙をこぼさないでくれ。僕のすべてをかけて君を笑顔に戻してみせるからさ。`;
-                } else {
-                    bodyContent = `我が運命の${targetName}へ。\n\n今、夜空の星に誓おう。僕が犯した「${mistake}」という致命的な過ちは、すべて僕の未熟さが生んだ悲劇だ。\n\n君を悲しませる世界など、僕がこの手で変えてみせよう。だから、どうかその美しい眉間のしわをほどいてほしい。僕の愛と誠意を込めて、この償いを君に捧ぐ。永遠に愛しているよ（謝罪）。`;
-                }
+                const templates = [
+                    // レパ1：王道ロマンチック王子
+                    `気高き${targetName}へ。\n\n我が愚かな手によって「${mistake}」という不手際を招き、君の美しい時間を汚してしまったね…この胸が痛んで仕方がないよ。どうかその綺麗な瞳を曇らせないでくれ。`,
+                    // レパ2：ツンデレ王子
+                    `おい${targetName}。\n\n「${mistake}」くらいでそんなに落ち込むなよ…って、僕のミスだったな。君が困っている顔を見るのは耐えがたい。僕のすべてをかけて償うから、こっちを向いて？`,
+                    // レパ3：中二病・暗黒王子
+                    `くっ… ${targetNameよ}。\n\n我が右腕の呪印が疼く中、「${mistake}」という闇の力が発動してしまったらしい。君を悲しませる世界など、僕の力ですべて更地にしてやろうか。……すマン、普通に許して。`,
+                    // レパ4：おねだり甘えん坊王子
+                    `ねえ、僕の可愛い${targetName}。\n\n僕が「${mistake}」なんてやらかしたせいで、君を怒らせちゃったね。これ以上冷たくされたらボク消えてしまいそうだよ。ね、笑顔を戻して？`,
+                    // レパ5：哲学者ポエム王子
+                    `夜空の星に問うてみたよ、${targetName}。「なぜ僕は『${mistake}』をやらかしてしまったのか」と。答えは出なかったけれど、一つだけ確かなことがある。君の怒りは春の嵐のように美しいということだ。許し給え。`
+                ];
+                bodyContent = templates[r];
             } else if (level === 'zero') {
-                if (length === 'short') {
-                    bodyContent = `${targetName}\n\n「${mistake}」しちゃったみたいだけどさ、まぁ人生なんとかなるっしょ！お疲れ！`;
-                } else if (length === 'normal') {
-                    bodyContent = `${targetName}\n\nいやー、「${mistake}」やっちまったもんはしょうがなくね？って心の中でちょっと思ってるんだけど、周りがうるさいから一応謝っとくわｗ\n\nまぁ、ドンマイってことで！次から気をつける気は一応ある（かも）から、よろしく！`;
-                } else {
-                    bodyContent = `${targetName}へ。\n\nぶっちゃけ「${mistake}」って聞いたとき、「え、俺悪くないくね？」って思ったんだけど、大人の事情でとりあえず全力で頭を下げるプレイスタイルをとることにしたわｗ\n\n人生山あり谷ありだし、こんなミスでくよくよしても仕方なくね？反省してる“フリ”をするのは得意だから、この長文の謝罪文を見て「こいつ反省してんな」って勝手に安心しといてくれ！\n\nそれじゃ、お疲れ様でしたー！`;
-                }
+                const templates = [
+                    // レパ1：開き直り
+                    `いやー、${targetName}。\n\n「${mistake}」やっちまったもんはしょうがなくね？人生山あり谷ありだし、こんなんでくよくよしても始まらないっしょ！ドンマイ！`,
+                    // レパ2：人のせいモード
+                    `${targetName}。\n\n「${mistake}」って起きたけどさ、これぶっちゃけ俺悪くない気がするんだよね。でも周りがうるさいから、一応「反省してる風」の文面出しとくわｗ`,
+                    // レパ3：無敵の無関心
+                    `へぇ、「${mistake}」ねぇ。\n\nそれがどうかしたの？ って言いたいところだけど、大人の事情で一応頭下げとくわ。形だけだから気にしないでくれ！`,
+                    // レパ4：逆ギレ気味
+                    `おい${targetName}、そんなに怒るなよ。\n\n「${mistake}」しくじったのは認めるけどさ、人間誰しも間違いはあるっしょ。次から気をつける気は…気が向いたらするわ！`,
+                    // レパ5：完全にバカにした謝罪
+                    `${targetName}へ。\n\n「${mistake}」についての謝罪文ね、はいはい、ごめんなさーい（棒読み）。これで満足？じゃあ俺ゲーム戻るわ！お疲れー！`
+                ];
+                bodyContent = templates[r];
             }
 
-            const finalOutput = `${relationTitle}\n\n${bodyContent}`;
+            if (length === 'short') {
+                bodyContent = `${targetName}\n\n「${mistake}」の件、本当にすみませんでした！`;
+            } else if (length === 'long') {
+                bodyContent += `\n\n（※補足：この長文の言い訳と熱意に免じて、どうか今回の件は水に流していただけないでしょうか。今後のあなたの機嫌次第で、どんな要求でも飲む所存でございます。）`;
+            }
 
-            document.getElementById('outputText').textContent = finalOutput;
+            document.getElementById('outputText').textContent = `${relationTitle}\n\n${bodyContent}`;
             document.getElementById('resultArea').classList.remove('hidden');
             document.getElementById('resultArea').scrollIntoView({ behavior: 'smooth' });
         }
