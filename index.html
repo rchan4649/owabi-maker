@@ -4,7 +4,7 @@
     <!-- ▼ 正しいAdSenseの審査用コード ▼ -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7778882177541864"
      crossorigin="anonymous"></script>
-    <meta name="description" content="ミスやトラブルの内容を選ぶだけで、ビジネス、上司、顧客、友人向けの完璧な謝罪文・お詫びメールを自動作成する無料ツールです。">
+    <meta name="description" content="ミスやトラブルの内容を選ぶだけで、ビジネス、上司、ギャル、王子様、反省してない風など、様々なテイストの謝罪文を自動作成する無料ツールです。">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>一発お詫びメーカー</title>
@@ -29,7 +29,7 @@
             
             <div>
                 <p class="text-sm text-slate-600 mb-4">
-                    ミスやトラブルの内容を入力するだけで、相手を怒らせない完璧な謝罪文を自動で組み立てます。
+                    ミスやトラブルの内容を入力するだけで、まじめな謝罪から「絶対反省してないやろｗ」なネタ系まで、完璧な（？）謝罪文を自動で組み立てます。
                 </p>
             </div>
 
@@ -38,19 +38,26 @@
                 <label class="block text-sm font-bold text-slate-700 mb-2" for="mistake">
                     1. ミスの内容（箇条書きでOK）
                 </label>
-                <textarea id="mistake" rows="3" class="w-full rounded-xl border border-slate-300 p-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="例：納期に2日遅れてしまった、連絡を入れ忘れた、発注数を間違えた"></textarea>
+                <textarea id="mistake" rows="3" class="w-full rounded-xl border border-slate-300 p-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="例：納期に2日遅れてしまった、連絡を入れ忘れた、盛大にやらかした"></textarea>
             </div>
 
-            <!-- ② 相手との関係性 -->
+            <!-- ② 相手との関係性・テイスト -->
             <div>
                 <label class="block text-sm font-bold text-slate-700 mb-2" for="relation">
-                    2. 相手との関係性
+                    2. 謝罪のテイスト・関係性
                 </label>
                 <select id="relation" class="w-full rounded-xl border border-slate-300 p-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white">
-                    <option value="client">厳しいクライアント・法人（ビジネス）</option>
-                    <option value="boss">直属の上司・先輩</option>
-                    <option value="customer">クレームを言ってきた顧客・一般ユーザー</option>
-                    <option value="friend">友人・知人</option>
+                    <optgroup label="まじめ・ビジネス系">
+                        <option value="client">厳しいクライアント・法人（ビジネス）</option>
+                        <option value="boss">直属の上司・先輩</option>
+                        <option value="customer">クレームを言ってきた顧客・一般ユーザー</option>
+                    </optgroup>
+                    <optgroup label="ユニーク・ネタ系（★NEW）">
+                        <option value="gal">✨ ギャルっぽく（まじでごめん〜！）</option>
+                        <option value="prince">👑 王子様っぽく（君の涙を汚してしまった…）</option>
+                        <option value="fake">🤪 こいつ反省してないやろｗ風</option>
+                        <option value="friend">友人・知人（カジュアル）</option>
+                    </optgroup>
                 </select>
             </div>
 
@@ -99,13 +106,13 @@
                 <pre id="outputText" class="whitespace-pre-wrap text-sm text-slate-700 font-sans"></pre>
             </div>
 
-            <!-- ★ ここにX（Twitter）への応援・リクエスト誘導ボックスを追加！ -->
+            <!-- X（Twitter）への応援・リクエスト誘導ボックス -->
             <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-indigo-100 rounded-xl p-5 text-center space-y-3">
                 <p class="text-sm font-bold text-slate-800">
-                    💡 このツールが役に立ったら、開発者を応援してね！
+                    💡 このツールが役に立った（または笑えた）ら、開発者を応援してね！
                 </p>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                    「こんな便利ツールも作ってほしい！」といったご要望やご意見は、開発者のX（Twitter）までお気軽にどうぞ！
+                    「もっとこういうふざけたテイストを追加して！」といったご要望は、開発者のX（Twitter）までお気軽にどうぞ！
                 </p>
                 <div>
                     <a href="https://x.com/1qcc5v" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs py-2.5 px-5 rounded-lg shadow transition">
@@ -152,6 +159,18 @@
                 relationTitle = '【お詫びのご連絡 / お客様向け】';
                 opening = 'いつも当店をご利用いただき、誠にありがとうございます。\nこの度は、せっかくのご期待を裏切る形となってしまいましたこと、心よりお詫び申し上げます。';
                 closing = '一刻も早く信頼を取り戻せるよう、誠心誠意対応させていただきます。\n重ねて、この度の不手際を深くお詫び申し上げます。';
+            } else if (relation === 'gal') {
+                relationTitle = '【超絶反省中（？）のギャルからのメッセージ】';
+                opening = 'まじでごめん！！！私のせいで超大事件になっててガチで草生えないんだけどぴえん🥺';
+                closing = '次は絶対やらかさないようにがんばるから、怒らないで〜！てへぺろ☆';
+            } else if (relation === 'prince') {
+                relationTitle = '【王宮からの悲痛なるお詫び（王子様風）】';
+                opening = '我が愚かな過ちによって、君の尊く美しい時間を奪ってしまったこと…この胸が痛んで仕方がないよ。';
+                closing = 'どうかその綺麗な瞳から涙をこぼさないでくれ。僕のすべてをかけて君を笑顔に戻してみせるからさ。';
+            } else if (relation === 'fake') {
+                relationTitle = '【反省してる“フリ”連絡網】';
+                opening = 'いやー、やっちまったもんはしょうがなくね？って心の中でちょっと思ってるんだけど、とりあえず謝っとくわｗ';
+                closing = 'まぁ、人生なんとかなるっしょ！次から気をつけるわ（多分）！お疲れ様でしたー！';
             } else {
                 relationTitle = '【お詫びメッセージ / 友人向け】';
                 opening = '本当にごめん！私のミスで大変な迷惑をかけちゃって、心から反省しています。';
@@ -175,8 +194,8 @@
         }
 
         function copyText() {
-            TheText = document.getElementById('outputText').textContent;
-            navigator.clipboard.writeText(TheText).then(() => {
+            const text = document.getElementById('outputText').textContent;
+            navigator.clipboard.writeText(text).then(() => {
                 const btn = document.getElementById('copyBtn');
                 btn.textContent = 'コピーしました！';
                 btn.classList.add('bg-emerald-500', 'text-white');
