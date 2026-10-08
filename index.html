@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <!-- ▼ 正しいAdSenseの審査用コード ▼ -->
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7778882177541864"
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7778882177541864"
      crossorigin="anonymous"></script>
     <meta name="description" content="ミスやトラブルの内容を選ぶだけで、ビジネス、上司、顧客、友人向けの完璧な謝罪文・お詫びメールを自動作成する無料ツールです。">
     <meta charset="UTF-8">
@@ -85,7 +85,7 @@
         </div>
 
         <!-- 結果表示エリア -->
-        <div id="resultArea" class="hidden mt-6 bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 space-y-4">
+        <div id="resultArea" class="hidden mt-6 bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 space-y-6">
             <div class="flex items-center justify-between">
                 <h2 class="font-bold text-slate-900 flex items-center gap-2">
                     📋 生成された謝罪文
@@ -98,12 +98,30 @@
             <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
                 <pre id="outputText" class="whitespace-pre-wrap text-sm text-slate-700 font-sans"></pre>
             </div>
+
+            <!-- ★ ここにX（Twitter）への応援・リクエスト誘導ボックスを追加！ -->
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-indigo-100 rounded-xl p-5 text-center space-y-3">
+                <p class="text-sm font-bold text-slate-800">
+                    💡 このツールが役に立ったら、開発者を応援してね！
+                </p>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    「こんな便利ツールも作ってほしい！」といったご要望やご意見は、開発者のX（Twitter）までお気軽にどうぞ！
+                </p>
+                <div>
+                    <a href="https://x.com/1qcc5v" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs py-2.5 px-5 rounded-lg shadow transition">
+                        🕥 開発者（@1qcc5v）のXを見る・フォローする
+                    </a>
+                </div>
+            </div>
         </div>
     </main>
 
     <!-- フッター -->
-    <footer class="text-center py-6 text-xs text-slate-400">
-        &copy; 2026 一発お詫びメーカー All Rights Reserved.
+    <footer class="bg-white border-t border-slate-200 mt-12 py-8 px-6 text-center text-xs text-slate-500 space-y-3">
+        <p>
+            🛠️ 不具合の報告・ご意見・制作のご依頼は、開発者の<a href="https://x.com/1qcc5v" target="_blank" rel="noopener noreferrer" class="text-indigo-600 font-bold hover:underline">X（@1qcc5v）のDM</a>までお気軽にどうぞ！
+        </p>
+        <p>&copy; 2026 一発お詫びメーカー All Rights Reserved.</p>
     </footer>
 
     <!-- スクリプト（ロジック部分） -->
@@ -157,8 +175,8 @@
         }
 
         function copyText() {
-            const text = document.getElementById('outputText').textContent;
-            navigator.clipboard.writeText(text).then(() => {
+            TheText = document.getElementById('outputText').textContent;
+            navigator.clipboard.writeText(TheText).then(() => {
                 const btn = document.getElementById('copyBtn');
                 btn.textContent = 'コピーしました！';
                 btn.classList.add('bg-emerald-500', 'text-white');
